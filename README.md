@@ -1,4 +1,3 @@
-# Unblocked Games at School
 
 ## Description
 A website that allows you to play unblocked games at school.
