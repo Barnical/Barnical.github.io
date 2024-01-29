@@ -38,24 +38,27 @@
   .button-container {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping to the next line */
-    align-items: flex-start; /* Align items to the start vertically */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
     margin-top: 20px; /* Add margin at the top to move it down */
   }
 
   .button-container button {
     flex-basis: calc(33.33% - 10px); /* 33.33% width for each button with margin */
     margin: 5px; /* Adjust margin as needed */
-    align-items: center; /* Center the content vertically within each button */
   }
 </style>
 
 <div class="button-container">
-  <button data-action="action1">Bitlife</button>
-  <button data-action="action2">1v1.lol</button>
-  <button data-action="action3">Among us</button>
-  <button data-action="action4">atr3</button>
-  <button data-action="action5">slope</button>
-  <!-- Add more buttons as needed -->
+  <div class="button-text">Choose a Game:</div>
+  <div class="buttons">
+    <button data-action="action1">Bitlife</button>
+    <button data-action="action2">1v1.lol</button>
+    <button data-action="action3">Among us</button>
+    <button data-action="action4">atr3</button>
+    <button data-action="action5">slope</button>
+    <!-- Add more buttons as needed -->
+  </div>
 </div>
 
 <script>
@@ -92,9 +95,6 @@
     });
   });
 </script>
-
-
-
     <!-- Some cool configurations -->
     <canvas id="snowflakes"></canvas>
     <script>
