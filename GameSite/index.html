@@ -38,10 +38,11 @@
   .button-container {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping to the next line */
+    align-items: flex-start; /* Align items to the start vertically */
   }
 
   .button-container button {
-    flex: 1; /* Equal width for all buttons */
+    flex-basis: calc(33.33% - 10px); /* 33.33% width for each button with margin */
     margin: 5px; /* Adjust margin as needed */
   }
 </style>
@@ -57,6 +58,7 @@
 
 <script>
   function openDictionary(dictionaryURL) {
+    const dictionaryURL = dictionaryURL;
     window.location.href = dictionaryURL;
   }
 
