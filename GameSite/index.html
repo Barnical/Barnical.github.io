@@ -74,6 +74,13 @@
       flex-basis: calc(20% - 10px);
     }
   }
+
+  @media (min-width: 3840px) {
+    /* Adjust styles for screens with a minimum width of 3840px (4K resolution) */
+    .button-container button {
+      flex-basis: calc(15% - 10px);
+    }
+  }
 </style>
 
 <div class="button-container">
@@ -87,7 +94,7 @@
 
 <script>
   function openDictionary(dictionaryURL) {
-      window.location.href = dictionaryURL;
+    window.location.href = dictionaryURL;
   }
 
   const buttons = document.querySelectorAll(".button-container button");
