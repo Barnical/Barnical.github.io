@@ -67,6 +67,13 @@
       flex-basis: calc(100% - 10px);
     }
   }
+
+  @media (min-width: 1920px) {
+    /* Adjust styles for screens with a minimum width of 1920px */
+    .button-container button {
+      flex-basis: calc(20% - 10px);
+    }
+  }
 </style>
 
 <div class="button-container">
@@ -112,9 +119,6 @@
     });
   });
 </script>
-
-
-
 
     <!-- Some cool configurations -->
     <canvas id="snowflakes"></canvas>
