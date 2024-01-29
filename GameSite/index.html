@@ -58,8 +58,8 @@
     // Specify the path to your 'index.html' file
     const dictionaryURL = '/Games/Bitlife/index.html';
 
-    // Open the URL in a new tab
-    window.open(dictionaryURL, '_blank');
+    // Redirect to the URL in the same tab
+    window.location.href = dictionaryURL;
   }
 
   const buttons = document.querySelectorAll(".button-container button");
