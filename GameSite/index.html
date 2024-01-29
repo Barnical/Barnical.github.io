@@ -48,16 +48,17 @@
 
 <div class="button-container">
   <button data-action="action1">Bitlife</button>
-  <button data-action="action2">Button 2</button>
-  <button data-action="action3">Button 3</button>
+  <button data-action="action2">1v1.lol</button>
+  <button data-action="action3">Among us</button>
+  <button data-action="action4">atr3</button>
+  <button data-action="action5">slope</button>
   <!-- Add more buttons as needed -->
 </div>
 
 <script>
-  function openDictionary() {
+  function openDictionary(dictionaryURL) {
     // Specify the path to your 'index.html' file
-    const dictionaryURL = '/Games/Bitlife/index.html';
-
+    const dictionaryURL = dictionaryURLl;
     // Redirect to the URL in the same tab
     window.location.href = dictionaryURL;
   }
@@ -71,21 +72,26 @@
       // Perform different actions based on the data-action attribute
       switch (action) {
         case "action1":
-          openDictionary();
+          openDictionary('/Games/Bitlife/index.html';);
           break;
         case "action2":
-          alert("Action 2 executed!");
-          // Add more logic for action 2
+                openDictionary('/Games/1v1.lol/index.html';);
           break;
         case "action3":
-          alert("Action 3 executed!");
-          // Add more logic for action 3
+                          openDictionary('/Games/Amongus/index.html';);
+
           break;
-        // Add more cases for additional actions
+                      case "action4":
+                          openDictionary('/Games/atr3/index.html';);
+
+          break;
+                                    case "action5":
+                          openDictionary('/Games/slope/index.html';);
+
+          break;
 
         default:
-          // Default action if no matching case is found
-          break;
+              break;
       }
     });
   });
