@@ -5,6 +5,7 @@ const path = require("path");
 const app = express();
 const PORT = 8000;
 
+let ip;
 
 app.use(express.static(path.join(__dirname)));
 
@@ -21,7 +22,7 @@ try {
 
 app.use((req, res, next) => {
    const clientIP = req.ip;
-   res.send(clientIP);
+   ip = clientIP;
    if (blockedIPs.includes(clientIP)) {
       res.status(403)
       res.sendFile(path.join(__dirname, "404.html"));
@@ -31,7 +32,8 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res) => {
-   res.sendFile(path.join(__dirname, "index.html"))
+   //res.sendFile(path.join(__dirname, "index.html"))
+   res.send(ip); // should work
 });
 
 app.listen(PORT, () => {
