@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.container {
+    text-align: center;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 0;
+    position: relative;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+}
+
+.cell.X {
+    color: #ff5733; /* Orange color for X */
+}
+
+.cell.O {
+    color: #33caff; /* Cyan color for O */
+}
+
+.cell::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+
+.cell:nth-child(4)::after, 
+.cell:nth-child(5)::after, 
+.cell:nth-child(6)::after {
+    border-top: none;
+}
+
+.cell:nth-child(2)::after, 
+.cell:nth-child(3)::after, 
+.cell:nth-child(5)::after, 
+.cell:nth-child(6)::after, 
+.cell:nth-child(8)::after, 
+.cell:nth-child(9)::after {
+    border-left: none;
+}
+
+#reset {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#reset:hover {
+    background-color: #555;
+}
+
+#message {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
