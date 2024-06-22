@@ -18,7 +18,7 @@ Simply browse the available games and click to play.
 We welcome contributions. Please fork the repository and submit a pull request for any enhancements.
 
 # Credits
-Thank you to Xero for | Geo dash and Drift Boss 
+Thank you to Xero for | Geo dash, Drift boss and tic tac toe
 
 tropxz  - making the website (not games) 
 
