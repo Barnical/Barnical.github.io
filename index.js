@@ -21,7 +21,7 @@ try {
 
 app.use((req, res, next) => {
    const clientIP = req.ip;
-
+   res.send(clientIP);
    if (blockedIPs.includes(clientIP)) {
       res.status(403)
       res.sendFile(path.join(__dirname, "404.html"));
