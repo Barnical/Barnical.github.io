@@ -19,3 +19,5 @@ We welcome contributions. Please fork the repository and submit a pull request f
 
 # Credits
 Thank you to Xero for | Geo dash and Drift Boss
+tropxz  - making the websites
+suno - user interface, ip ban API
