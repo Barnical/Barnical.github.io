@@ -1,4 +1,3 @@
-**BARNICAL.GITHUB.IO IS THE BEST NO ADS NO SIGN UP JUST PLAIN PRO | https://discord.gg/w67WPu5XuT 😎👍🏻** 
 ## Description
 A website that allows you to play unblocked games at school.
 
