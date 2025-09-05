@@ -2,324 +2,230 @@
 <html lang="en">
 
 <head>
-<link rel="icon" href="../7xXvLp1.webp" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barnacle</title>
+  <link rel="icon" href="../7xXvLp1.webp" type="image/x-icon">
 
-    <meta charset="UTF-8">
-    <h1>
-        Made by a student, for students.
-        <span class="magic">
-            <span class="magic-star">
-                <svg viewBox="0 0 512 512">
-                    <path
-                        d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
-                </svg>
-            </span>
-            <span class="magic-star">
-                <svg viewBox="0 0 512 512">
-                    <path
-                        d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
-                </svg>
-            </span>
-            <span class="magic-star">
-                <svg viewBox="0 0 512 512">
-                    <path
-                        d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
-                </svg>
-            </span>
-            <span class="magic-text">Barnacle</span>
-        </span>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
 
-    </h1>
-
-    <!-- Mr. Jailbreak time -->
-<style>
-  body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 250vh;
-  }
-
-  .button-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .button-container button {
-    flex-basis: calc(33.33% - 10px);
-    margin: 5px;
-  }
-
-  @media (max-width: 768px) {
-    .button-container button {
-      flex-basis: calc(50% - 10px);
+    :root {
+      --bg-dark: #1a1a1a;
+      --btn-dark: #242424;
+      --btn-hover: #3a3a3a;
+      --text-light: #f9f6ef;
+      --accent-purple: #7b1fa2;
+      --accent-violet: #673ab7;
+      --accent-pink: #f48fb1;
+      --glow: rgba(123, 31, 162, 0.6);
     }
-  }
 
-  @media (max-width: 480px) {
-    .button-container button {
-      flex-basis: calc(100% - 10px);
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-  }
 
-  @media (min-width: 1920px) {
-    .button-container button {
-      flex-basis: calc(20% - 10px);
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
+      position: relative;
+      padding: 0 20px;
     }
-  }
 
-  @media (min-width: 3840px) {
-    .button-container button {
-      flex-basis: calc(15% - 10px);
+    h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      text-align: center;
+      font-weight: 700;
+      margin-top: 60px;
+      background: linear-gradient(90deg, var(--accent-purple), var(--accent-violet), var(--accent-pink));
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 5s linear infinite;
+      position: relative;
     }
-  }
-</style>
 
-    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 40px 0;
+    }
 
-<div class="button-container">
-  <button data-action="action1">Bitlife</button>
-  <button data-action="action2">1v1.lol</button>
-  <button data-action="action3">Among us</button>
-  <button data-action="action4">atr3</button>
-  <button data-action="action5">slope</button>
-  <button data-action="action6">snake</button>
-  <button data-action="action7">ClumsyBird</button>
-  <button data-action="action8">Cookie clicker</button>
-  <button data-action="action9">Tetris</button>
-  <button data-action="action10">Save the doge</button>
-  <button data-action="action14">Pacman</button>
-  <!-- <button data-action="action15">Stack ball</button> -->  
-<button data-action="action16">Bee swarm Simulator</button>
-  <button data-action="action18">minecraft 1.8.8 (i think might be a higher verison)</button>
-  <button data-action="action19">geometry dash</button>
-  <button data-action="action20">Crossy Road</button>
-  <button data-action="action21">Monkey Mart</button>
-  <button data-action="action22">Subway Surfers</button>
-  <button data-action="action23">Tic Tac Toe</button>
-  <button data-action="action24">Chrome offline dinoscar game</button>
-  <button data-action="action25">friday night funkin'</button>
-  <button data-action="action26">3d.city</button>
-  <button data-action="action27">particle clicker</button>
-  <button data-action="action28">the house game</button>
-  <button data-action="action29">Cube engine</button>
-  <button data-action="action30">URL chess</button>
-  <button data-action="action31">asteroid game</button>
-  <button data-action="action32">puzzle maker</button>
-  <button data-action="action33">Anime clicker</button>
-  <button data-action="action34">Doge miner</button>
-  <button data-action="action35">Slope 2</button>
-  <button data-action="action36">Getting over it</button>
-  <button data-action="action37">Baldi's basics</button>
-  <button data-action="action38">tower game</button>
-  <button data-action="action39">Stickman hook</button>
-  <button data-action="action40">Worlds hardest game</button>
-  <button data-action="action41">Bob the robber</button>
-  <button data-action="action42">Bedwars</button>
-  <button data-action="action43">Fifa 17 pack opener</button>
-  <button data-action="action44">Pet simulator x</button>
-  <button data-action="action45">Playlist cover maker</button>
-  <button data-action="action46">Blockblast</button>
-  <button data-action="action47">birthday guesser</button>
+    button {
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-light);
+      background-color: var(--btn-dark);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5), 0 0 5px var(--glow);
+      position: relative;
+      overflow: hidden;
+    }
 
+    button::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, var(--accent-purple), var(--accent-violet), var(--accent-pink), var(--accent-purple));
+      opacity: 0.2;
+      transform: rotate(0deg);
+      transition: all 0.5s ease;
+    }
 
-</div>
+    button:hover::before {
+      opacity: 0.5;
+      transform: rotate(45deg);
+    }
 
-<script>
-  function openDictionary(dictionaryURL) {
-    window.location.href = dictionaryURL;
-  }
+    button:hover {
+      transform: scale(1.05);
+      background-color: var(--btn-hover);
+      box-shadow: 0 0 20px var(--glow), 0 0 10px rgba(0,0,0,0.5);
+    }
 
-  const buttons = document.querySelectorAll(".button-container button");
+    button:active {
+      transform: scale(0.95);
+    }
 
-  buttons.forEach(button => {
-    button.addEventListener("click", function() {
-      const action = button.dataset.action;
+    /* Footer spacing */
+    .footer-space { height: 100px; }
 
-      switch (action) {
-        case "action1":
-          openDictionary('/Games/Bitlife/index.html');
-          break;
-        case "action2":
-          openDictionary('/Games/1v1.lol/index.html');
-          break;
-        case "action3":
-          openDictionary('/Games/Amongus/index.html');
-          break;
-        case "action4":
-          openDictionary('/Games/atr3/index.html');
-          break;
-        case "action5":
-          openDictionary('/Games/slope/index.html');
-          break;
-                      case "action6":
-          openDictionary('/Games/snake/index.html');
-          break;
-        case "action7":
-          openDictionary('/Games/clumsy-bird-master/index.html');
-          break;
-                      case "action8":
-          openDictionary('/Games/Cookie-Clicker-Source-Code-master/index.html');
-          break;
-                      case "action9":
-          openDictionary('/Games/canvas-tetris-master/canvas-tetris-master/index.html');
-          break;
-                      case "action10":
-          openDictionary('/Games/Dog/index.html');
-          break;
-                                                  case "action14":
-          openDictionary('/Games/pm.html');
-          break;
-
-          //                                                       case "action15":
-          // openDictionary('/Games/stackball.html');
-          // break;
-
-                                                                             case "action16":
-           openDictionary('/Games/Bee-Swarm-Simulator/index.html');
-           break;
-
-                                                                                            case "action18":
-          openDictionary('/Games/mc.html');
-          break;
-                                                                                             case "action19":
-          openDictionary('/Games/geodash.html');
-          break;     
-                                                                                                           case "action20":
-          openDictionary('/Games/CrossyRoad/index.html');
-          break; 
-
-                                                                                                                         case "action21":
-          openDictionary('/Games/mm.html');
-          break;  
-                                                                                                                          case "action22":
-          openDictionary('/Games/Subway/index.html');
-          break;         
-
-                                                                                                                                        case "action23":
-          openDictionary('/Games/tic tac toe/index.html');
-          break;         
-
-                                                                                                                                                   case "action24":
-          openDictionary('/Games/dino.html');
-          break;      
-                                                                                                                                                                 case "action25":
-          openDictionary('/Games/fnf.html');
-          break;     
-                                                                                                                                                                              case "action26":
-          openDictionary('/Games/3d.city/index.html');
-          break;  
-                                                                                                                                                                                            case "action27":
-          openDictionary('/Games/particleclicker/index.html');
-          break;  
-
-                                                                                                                                                                                            case "action28":
-          openDictionary('/Games/Thehousegame/the-house-game-gh-pages/index.html');
-          break;
-                                                                                                                                                                                                          case "action29":
-          openDictionary('/Games/Cube-engine-master/play.htm');
-          break;  
-                                                                                                                                                                                                          case "action30":
-          openDictionary('/Games/URLchess-master/index.html');
-          break;  
-                                                                                                                                                                                                                        case "action31":
-          openDictionary('/Games/asteroids-game-master/index.html');
-          break;  
-                                                                                                                                                                                                                                      case "action32":
-          openDictionary('/Games/Fifteen_puzzle_maker-main/index.html');
-          break; 
-                                                                                                                                                                                                                                      case "action33":
-          openDictionary('/Games/Anime-Clicker-1.0.2-master/index.html');
-          break; 
-                                                                                           case "action34":
-           openDictionary('/Games/doge miner/index.html');
-           break;
-                                                                             case "action35":
-           openDictionary('/Games/Slope 2/index.html');
-           break;
-                                                                                           case "action36":
-           openDictionary('/Games/getting over it/index.html');
-           break;
-                                                                                                        case "action37":
-           openDictionary('/Games/baldi-basics/index.html');
-           break;
-                                                                                                                      case "action38":
-           openDictionary('/Games/tower_game-master/index.html');
-           break;
-                                                                                                                                    case "action39":
-           openDictionary('/Games/Stickman-Hook/index.html');
-           break;
-                                                                                                                                                                case "action40":
-           openDictionary('/Games/Worlds-Hardest-Game/index.html');
-           break;
-                                                                                                                                                                              case "action41":
-           openDictionary('/Games/bob-the-robber-2/index.html');
-           break; 
-                                                                                                                                                                                            case "action42":
-           openDictionary('/Games/Bedwars.html');
-           break; 
-                                                                                                                                                                                            case "action43":
-           openDictionary('/Games/fifa17packopener.html');
-           break; 
-                                                                                                                                                                                                          case "action44":
-           openDictionary('/Games/psx.html');
-           break; 
-                                                                                                                                                                                                          case "action45":
-           openDictionary('/Games/playlists-generator-main/index.html');
-           break; 
-                                                                                                                                                                                                                        case "action46":
-           openDictionary('/Games/blockblast.html');
-           break; 
-                                                                                                                                                                                                          case "action47":
-           openDictionary('/Games/birthdayguesser.html');
-           break; 
-        default:
-          break;
-      }
-    });
-  });
-</script>
-
-
-
-
-    <!-- Some cool configurations -->
-    <canvas id="snowflakes"></canvas>
-    <script>
-        const Window = window;
-
-        Window.Config = {
-            generatorDelay: { min: 1, max: 20 },
-            speed: 0.5,
-            x_axis_rate: 0.05,
-            weight: 0.5,
-            size: 1.5,
-            z_axis_rate: 0.05,
-            color: { b: 255, a: 0.8 },
-            wind: 0
-        };
-    </script>
-
-    <!-- Give our program some life I guess. -->
-    <meta charset="UTF-8">
-    <title>Barnacle</title>
-    <meta content="Barnacle" property="og:title" />
-    <meta content="This beautiful Website by Johnny (iamanewma__n on discord) is a good website with tons of games for you to play at school with a beautiful user interface Barnical on top" property="og:description" />
-    <meta content="https://barnical.github.io/GameSite/index.html" property="og:url" />
-    <meta content="7xXvLp1.webp" property="og:image" />
-    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
-
-    <!-- Cherish the almighty power of our external files. -->
-    <link rel="stylesheet" href="Styles.css">
-
-    <script src="Script.js"></script>
-    <script src="/Effects/Snowflakes.js"></script>
-    <div class="elfsight-app-3b217862-fc3e-4149-9443-55ef8f0d4d8f" data-elfsight-app-lazy></div>
-
+  </style>
 </head>
 
+<body>
+
+  <h1>Barnacle</h1>
+
+  <div class="button-container">
+    <button data-action="action1">Bitlife</button>
+    <button data-action="action2">1v1.lol</button>
+    <button data-action="action3">Among us</button>
+    <button data-action="action4">atr3</button>
+    <button data-action="action5">slope</button>
+    <button data-action="action6">snake</button>
+    <button data-action="action7">ClumsyBird</button>
+    <button data-action="action8">Cookie clicker</button>
+    <button data-action="action9">Tetris</button>
+    <button data-action="action10">Save the doge</button>
+    <button data-action="action14">Pacman</button>
+    <button data-action="action16">Bee swarm Simulator</button>
+    <button data-action="action18">minecraft 1.8.8</button>
+    <button data-action="action19">geometry dash</button>
+    <button data-action="action20">Crossy Road</button>
+    <button data-action="action21">Monkey Mart</button>
+    <button data-action="action22">Subway Surfers</button>
+    <button data-action="action23">Tic Tac Toe</button>
+    <button data-action="action24">Chrome offline dinoscar game</button>
+    <button data-action="action25">friday night funkin'</button>
+    <button data-action="action26">3d.city</button>
+    <button data-action="action27">particle clicker</button>
+    <button data-action="action28">the house game</button>
+    <button data-action="action29">Cube engine</button>
+    <button data-action="action30">URL chess</button>
+    <button data-action="action31">asteroid game</button>
+    <button data-action="action32">puzzle maker</button>
+    <button data-action="action33">Anime clicker</button>
+    <button data-action="action34">Doge miner</button>
+    <button data-action="action35">Slope 2</button>
+    <button data-action="action36">Getting over it</button>
+    <button data-action="action37">Baldi's basics</button>
+    <button data-action="action38">tower game</button>
+    <button data-action="action39">Stickman hook</button>
+    <button data-action="action40">Worlds hardest game</button>
+    <button data-action="action41">Bob the robber</button>
+    <button data-action="action42">Bedwars</button>
+    <button data-action="action43">Fifa 17 pack opener</button>
+    <button data-action="action44">Pet simulator x</button>
+    <button data-action="action45">Playlist cover maker</button>
+    <button data-action="action46">Blockblast</button>
+    <button data-action="action47">birthday guesser</button>
+  </div>
+
+  <div class="footer-space"></div>
+
+  <canvas id="snowflakes"></canvas>
+
+  <script>
+    // Buttons logic
+    function openDictionary(url) { window.location.href = url; }
+    const buttons = document.querySelectorAll(".button-container button");
+    buttons.forEach(button => {
+      button.addEventListener("click", function () {
+        const action = button.dataset.action;
+        const routes = {
+          action1: '/Games/Bitlife/index.html',
+          action2: '/Games/1v1.lol/index.html',
+          action3: '/Games/Amongus/index.html',
+          action4: '/Games/atr3/index.html',
+          action5: '/Games/slope/index.html',
+          action6: '/Games/snake/index.html',
+          action7: '/Games/clumsy-bird-master/index.html',
+          action8: '/Games/Cookie-Clicker-Source-Code-master/index.html',
+          action9: '/Games/canvas-tetris-master/canvas-tetris-master/index.html',
+          action10: '/Games/Dog/index.html',
+          action14: '/Games/pm.html',
+          action16: '/Games/Bee-Swarm-Simulator/index.html',
+          action18: '/Games/mc.html',
+          action19: '/Games/geodash.html',
+          action20: '/Games/CrossyRoad/index.html',
+          action21: '/Games/mm.html',
+          action22: '/Games/Subway/index.html',
+          action23: '/Games/tic tac toe/index.html',
+          action24: '/Games/dino.html',
+          action25: '/Games/fnf.html',
+          action26: '/Games/3d.city/index.html',
+          action27: '/Games/particleclicker/index.html',
+          action28: '/Games/Thehousegame/the-house-game-gh-pages/index.html',
+          action29: '/Games/Cube-engine-master/play.htm',
+          action30: '/Games/URLchess-master/index.html',
+          action31: '/Games/asteroids-game-master/index.html',
+          action32: '/Games/Fifteen_puzzle_maker-main/index.html',
+          action33: '/Games/Anime-Clicker-1.0.2-master/index.html',
+          action34: '/Games/doge miner/index.html',
+          action35: '/Games/Slope 2/index.html',
+          action36: '/Games/getting over it/index.html',
+          action37: '/Games/baldi-basics/index.html',
+          action38: '/Games/tower_game-master/index.html',
+          action39: '/Games/Stickman-Hook/index.html',
+          action40: '/Games/Worlds-Hardest-Game/index.html',
+          action41: '/Games/bob-the-robber-2/index.html',
+          action42: '/Games/Bedwars.html',
+          action43: '/Games/fifa17packopener.html',
+          action44: '/Games/psx.html',
+          action45: '/Games/playlists-generator-main/index.html',
+          action46: '/Games/blockblast.html',
+          action47: '/Games/birthdayguesser.html'
+        };
+        if (routes[action]) openDictionary(routes[action]);
+      });
+    });
+  </script>
+
+</body>
 </html>
